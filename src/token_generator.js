@@ -1,7 +1,7 @@
-const Twilio = require('twilio');
+const Twilio = require("twilio");
 
-const config = require('./config');
-const nameGenerator = require('../name_generator');
+const config = require("./config");
+const nameGenerator = require("../name_generator");
 
 // Access Token used for Video, IP Messaging, and Sync
 const AccessToken = Twilio.jwt.AccessToken;
@@ -37,7 +37,7 @@ function tokenGenerator(identity = 0) {
     // Create a "grant" which enables a client to use IPM as a given user,
     // on a given device
     const chatGrant = new ChatGrant({
-      serviceSid: config.TWILIO_CHAT_SERVICE_SID
+      serviceSid: config.TWILIO_CHAT_SERVICE_SID,
     });
     token.addGrant(chatGrant);
   }
@@ -46,7 +46,7 @@ function tokenGenerator(identity = 0) {
     // Point to a particular Sync service, or use the account default to
     // interact directly with Functions.
     const syncGrant = new SyncGrant({
-      serviceSid: config.TWILIO_SYNC_SERVICE_SID || 'default'
+      serviceSid: config.TWILIO_SYNC_SERVICE_SID || "default",
     });
     token.addGrant(syncGrant);
   }
@@ -54,7 +54,7 @@ function tokenGenerator(identity = 0) {
   // Serialize the token to a JWT string and include it in a JSON response
   return {
     identity: token.identity,
-    token: token.toJwt()
+    token: token.toJwt(),
   };
 }
 

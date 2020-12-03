@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 
 module.exports = {
   TWILIO_ACCOUNT_SID: process.env.TWILIO_ACCOUNT_SID,
@@ -6,5 +6,7 @@ module.exports = {
   TWILIO_API_SECRET: process.env.TWILIO_API_SECRET,
   TWILIO_CHAT_SERVICE_SID: process.env.TWILIO_CHAT_SERVICE_SID,
   TWILIO_NOTIFICATION_SERVICE_SID: process.env.TWILIO_NOTIFICATION_SERVICE_SID,
-  TWILIO_SYNC_SERVICE_SID: process.env.TWILIO_SYNC_SERVICE_SID || 'default'
-}
+  TWILIO_SYNC_SERVICE_SID: process.env.TWILIO_SYNC_SERVICE_SID || "default",
+  TWILIO_FCM_SID: process.env.TWILIO_FCM_SID,
+  TWILIO_APNS_SID: process.env.TWILLIO.APNS_SID,
+};
